@@ -1,0 +1,2040 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/8/2023 4:34:47 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="IHM"
+  DTS:CreatorName="IHM\nayin"
+  DTS:DTSID="{2FCEF86F-2099-442F-A5D2-1EAB1EEB6D74}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.0"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{C7C1D559-B1C4-47E6-A546-EB441BA48FE1}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="SSIS.ReplacementTask"
+      DTS:Description="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:DTSID="{5C1507AA-B8F8-45DA-BB7E-BCD1B8469E9F}"
+      DTS:ExecutableType="SSIS.ReplacementTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4"
+              id="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout"
+                  id="3">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"
+                  id="4">[userDetails]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"
+                  id="5"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"
+                  id="6"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage"
+                  id="7">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage"
+                  id="8">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode"
+                  id="9">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity"
+                  id="10">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls"
+                  id="11">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"
+                  id="12">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize"
+                  id="13">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  connectionManagerID="{9F75FD1C-0C27-4457-A834-1F96FBDEA7B0}"
+                  connectionManagerRefId="Package.ConnectionManagers[Destination]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection"
+                  id="14" />
+              </connections>
+              <inputs>
+                <input
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input"
+                  id="15">
+                  <inputColumns>
+                    <inputColumn
+                      cachedDataType="i4"
+                      cachedName="interaction_id"
+                      externalMetadataColumnId="19"
+                      lineageId="37"
+                      id="16" />
+                    <inputColumn
+                      cachedDataType="i4"
+                      cachedName="component_count"
+                      externalMetadataColumnId="20"
+                      lineageId="38"
+                      id="17" />
+                    <inputColumn
+                      cachedDataType="bool"
+                      cachedName="transfer_out"
+                      externalMetadataColumnId="21"
+                      lineageId="39"
+                      id="18" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      dataType="i4"
+                      name="interaction_id"
+                      id="19" />
+                    <externalMetadataColumn
+                      dataType="i4"
+                      name="component_count"
+                      id="20" />
+                    <externalMetadataColumn
+                      dataType="bool"
+                      name="transfer_out"
+                      id="21" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="15"
+                  id="22">
+                  <outputColumns>
+                    <outputColumn
+                      dataType="i4"
+                      lineageId="23"
+                      name="ErrorCode"
+                      specialFlags="1"
+                      id="23" />
+                    <outputColumn
+                      dataType="i4"
+                      lineageId="24"
+                      name="ErrorColumn"
+                      specialFlags="2"
+                      id="24" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7"
+              id="25">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout"
+                  id="26">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"
+                  id="27"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"
+                  id="28"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"
+                  id="29">EXEC getUserDetails
+WITH RESULT SETS 
+(
+ (
+   	interaction_id int,
+	component_count int,
+	transfer_out bit
+ )
+)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"
+                  id="30"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage"
+                  id="31">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage"
+                  id="32">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode"
+                  id="33">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"
+                  id="34"></property>
+              </properties>
+              <connections>
+                <connection
+                  connectionManagerID="{9F75FD1C-0C27-4457-A834-1F96FBDEA7B0}"
+                  connectionManagerRefId="Package.ConnectionManagers[Destination]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection"
+                  id="35" />
+              </connections>
+              <outputs>
+                <output
+                  name="OLE DB Source Output"
+                  id="36">
+                  <outputColumns>
+                    <outputColumn
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="40"
+                      lineageId="37"
+                      name="interaction_id"
+                      truncationRowDisposition="FailComponent"
+                      id="37" />
+                    <outputColumn
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="41"
+                      lineageId="38"
+                      name="component_count"
+                      truncationRowDisposition="FailComponent"
+                      id="38" />
+                    <outputColumn
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="42"
+                      lineageId="39"
+                      name="transfer_out"
+                      truncationRowDisposition="FailComponent"
+                      id="39" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      dataType="i4"
+                      name="interaction_id"
+                      id="40" />
+                    <externalMetadataColumn
+                      dataType="i4"
+                      name="component_count"
+                      id="41" />
+                    <externalMetadataColumn
+                      dataType="bool"
+                      name="transfer_out"
+                      id="42" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output"
+                  id="43">
+                  <outputColumns>
+                    <outputColumn
+                      dataType="i4"
+                      lineageId="44"
+                      name="interaction_id"
+                      id="44" />
+                    <outputColumn
+                      dataType="i4"
+                      lineageId="45"
+                      name="component_count"
+                      id="45" />
+                    <outputColumn
+                      dataType="bool"
+                      lineageId="46"
+                      name="transfer_out"
+                      id="46" />
+                    <outputColumn
+                      dataType="i4"
+                      lineageId="47"
+                      name="ErrorCode"
+                      specialFlags="1"
+                      id="47" />
+                    <outputColumn
+                      dataType="i4"
+                      lineageId="48"
+                      name="ErrorColumn"
+                      specialFlags="2"
+                      id="48" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              endId="15"
+              name="OLE DB Source Output"
+              startId="36"
+              id="49" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{108D4B0E-122A-4ADD-96FE-57DB46C7FBA0}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Move records to care_dates_staging"
+          DTS:CreationName="SSIS.ReplacementTask"
+          DTS:Description="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:DTSID="{3E977C95-8891-425A-811A-E429E0F23F02}"
+          DTS:ExecutableType="SSIS.ReplacementTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Move records to care_dates_staging"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="care_dates source"
+                  usesDispositions="true"
+                  version="7"
+                  id="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout"
+                      id="3">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"
+                      id="4">"art"."care_dates"</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"
+                      id="5"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"
+                      id="6">SELECT * from art.care_dates ORDER BY interaction_id ASC</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"
+                      id="7"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage"
+                      id="8">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage"
+                      id="9">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode"
+                      id="10">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"
+                      id="11"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      connectionManagerID="{B9E4AB14-1FB7-4886-9D4E-BB43D4C1CEDC}"
+                      connectionManagerRefId="Package.ConnectionManagers[source]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection"
+                      id="12" />
+                  </connections>
+                  <outputs>
+                    <output
+                      name="OLE DB Source Output"
+                      id="13">
+                      <outputColumns>
+                        <outputColumn
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="17"
+                          lineageId="14"
+                          name="interaction_id"
+                          truncationRowDisposition="FailComponent"
+                          id="14" />
+                        <outputColumn
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="18"
+                          lineageId="15"
+                          name="art_clinical_care"
+                          truncationRowDisposition="FailComponent"
+                          id="15" />
+                        <outputColumn
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="19"
+                          lineageId="16"
+                          name="ctx_issued"
+                          truncationRowDisposition="FailComponent"
+                          id="16" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          dataType="i4"
+                          name="interaction_id"
+                          id="17" />
+                        <externalMetadataColumn
+                          dataType="bool"
+                          name="art_clinical_care"
+                          id="18" />
+                        <externalMetadataColumn
+                          dataType="bool"
+                          name="ctx_issued"
+                          id="19" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output"
+                      id="20">
+                      <outputColumns>
+                        <outputColumn
+                          dataType="i4"
+                          lineageId="21"
+                          name="interaction_id"
+                          id="21" />
+                        <outputColumn
+                          dataType="bool"
+                          lineageId="22"
+                          name="art_clinical_care"
+                          id="22" />
+                        <outputColumn
+                          dataType="bool"
+                          lineageId="23"
+                          name="ctx_issued"
+                          id="23" />
+                        <outputColumn
+                          dataType="i4"
+                          lineageId="24"
+                          name="ErrorCode"
+                          specialFlags="1"
+                          id="24" />
+                        <outputColumn
+                          dataType="i4"
+                          lineageId="25"
+                          name="ErrorColumn"
+                          specialFlags="2"
+                          id="25" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="care_dates_staging"
+                  usesDispositions="true"
+                  version="4"
+                  id="26">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout"
+                      id="27">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"
+                      id="28">[care_dates_staging]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"
+                      id="29"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"
+                      id="30"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage"
+                      id="31">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage"
+                      id="32">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode"
+                      id="33">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity"
+                      id="34">true</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls"
+                      id="35">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"
+                      id="36">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize"
+                      id="37">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      connectionManagerID="{9F75FD1C-0C27-4457-A834-1F96FBDEA7B0}"
+                      connectionManagerRefId="Package.ConnectionManagers[Destination]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection"
+                      id="38" />
+                  </connections>
+                  <inputs>
+                    <input
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input"
+                      id="39">
+                      <inputColumns>
+                        <inputColumn
+                          cachedDataType="i4"
+                          cachedName="interaction_id"
+                          externalMetadataColumnId="43"
+                          lineageId="14"
+                          id="40" />
+                        <inputColumn
+                          cachedDataType="bool"
+                          cachedName="art_clinical_care"
+                          externalMetadataColumnId="44"
+                          lineageId="15"
+                          id="41" />
+                        <inputColumn
+                          cachedDataType="bool"
+                          cachedName="ctx_issued"
+                          externalMetadataColumnId="45"
+                          lineageId="16"
+                          id="42" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          dataType="i4"
+                          name="interaction_id"
+                          id="43" />
+                        <externalMetadataColumn
+                          dataType="bool"
+                          name="art_clinical_care"
+                          id="44" />
+                        <externalMetadataColumn
+                          dataType="bool"
+                          name="ctx_issued"
+                          id="45" />
+                        <externalMetadataColumn
+                          dataType="dbTimeStamp"
+                          name="created"
+                          id="46" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="39"
+                      id="47">
+                      <outputColumns>
+                        <outputColumn
+                          dataType="i4"
+                          lineageId="48"
+                          name="ErrorCode"
+                          specialFlags="1"
+                          id="48" />
+                        <outputColumn
+                          dataType="i4"
+                          lineageId="49"
+                          name="ErrorColumn"
+                          specialFlags="2"
+                          id="49" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  endId="39"
+                  name="OLE DB Source Output"
+                  startId="13"
+                  id="50" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Truncate care_dates_staging"
+          DTS:CreationName="SSIS.ReplacementTask"
+          DTS:Description="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:DTSID="{6F120915-CB07-4583-B086-3E5A7A88F610}"
+          DTS:ExecutableType="SSIS.ReplacementTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate care_dates_staging"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9F75FD1C-0C27-4457-A834-1F96FBDEA7B0}"
+              SQLTask:SqlStatementSource="DELETE FROM care_dates_staging;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{5B9EE841-9704-4A77-9A01-A694C8FFBEAF}"
+          DTS:From="Package\Sequence Container\Truncate care_dates_staging"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence Container\Move records to care_dates_staging" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container 1"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{50BCE03E-9101-4683-B9E8-225A93567BD6}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container 1">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container 1\Move records to patient_status_staging"
+          DTS:CreationName="SSIS.ReplacementTask"
+          DTS:Description="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:DTSID="{678D35EE-CCB9-4C11-BB54-F6601E494EE6}"
+          DTS:ExecutableType="SSIS.ReplacementTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Move records to patient_status_staging"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4"
+                  id="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout"
+                      id="3">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"
+                      id="4">[patient_status_staging]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"
+                      id="5"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"
+                      id="6"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage"
+                      id="7">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage"
+                      id="8">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode"
+                      id="9">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity"
+                      id="10">true</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls"
+                      id="11">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"
+                      id="12">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize"
+                      id="13">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      connectionManagerID="{9F75FD1C-0C27-4457-A834-1F96FBDEA7B0}"
+                      connectionManagerRefId="Package.ConnectionManagers[Destination]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection"
+                      id="14" />
+                  </connections>
+                  <inputs>
+                    <input
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input"
+                      id="15">
+                      <inputColumns>
+                        <inputColumn
+                          cachedDataType="i4"
+                          cachedName="interaction_id"
+                          externalMetadataColumnId="33"
+                          lineageId="65"
+                          id="16" />
+                        <inputColumn
+                          cachedDataType="bool"
+                          cachedName="transfer_out"
+                          externalMetadataColumnId="34"
+                          lineageId="66"
+                          id="17" />
+                        <inputColumn
+                          cachedDataType="dbDate"
+                          cachedName="transfer_out_date"
+                          externalMetadataColumnId="35"
+                          lineageId="67"
+                          id="18" />
+                        <inputColumn
+                          cachedDataType="bool"
+                          cachedName="reactivated"
+                          externalMetadataColumnId="36"
+                          lineageId="68"
+                          id="19" />
+                        <inputColumn
+                          cachedDataType="dbDate"
+                          cachedName="reactivated_date"
+                          externalMetadataColumnId="37"
+                          lineageId="69"
+                          id="20" />
+                        <inputColumn
+                          cachedDataType="bool"
+                          cachedName="made_inactive"
+                          externalMetadataColumnId="38"
+                          lineageId="70"
+                          id="21" />
+                        <inputColumn
+                          cachedDataType="dbDate"
+                          cachedName="made_inactive_date"
+                          externalMetadataColumnId="39"
+                          lineageId="71"
+                          id="22" />
+                        <inputColumn
+                          cachedDataType="bool"
+                          cachedName="died"
+                          externalMetadataColumnId="40"
+                          lineageId="72"
+                          id="23" />
+                        <inputColumn
+                          cachedDataType="dbDate"
+                          cachedName="died_date"
+                          externalMetadataColumnId="41"
+                          lineageId="73"
+                          id="24" />
+                        <inputColumn
+                          cachedDataType="bool"
+                          cachedName="stopped_art"
+                          externalMetadataColumnId="42"
+                          lineageId="74"
+                          id="25" />
+                        <inputColumn
+                          cachedDataType="dbDate"
+                          cachedName="stopped_art_date"
+                          externalMetadataColumnId="43"
+                          lineageId="75"
+                          id="26" />
+                        <inputColumn
+                          cachedDataType="nText"
+                          cachedName="patient_made_inactive_reason"
+                          externalMetadataColumnId="44"
+                          lineageId="76"
+                          id="27" />
+                        <inputColumn
+                          cachedDataType="nText"
+                          cachedName="clinic_referred_to"
+                          externalMetadataColumnId="45"
+                          lineageId="77"
+                          id="28" />
+                        <inputColumn
+                          cachedDataType="nText"
+                          cachedName="cause_of_death"
+                          externalMetadataColumnId="46"
+                          lineageId="78"
+                          id="29" />
+                        <inputColumn
+                          cachedDataType="nText"
+                          cachedName="other_cause_of_death"
+                          externalMetadataColumnId="47"
+                          lineageId="79"
+                          id="30" />
+                        <inputColumn
+                          cachedDataType="nText"
+                          cachedName="patient_reactivated_reason"
+                          externalMetadataColumnId="48"
+                          lineageId="80"
+                          id="31" />
+                        <inputColumn
+                          cachedDataType="nText"
+                          cachedName="other_patient_reactivated_reason"
+                          externalMetadataColumnId="49"
+                          lineageId="81"
+                          id="32" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          dataType="i4"
+                          name="interaction_id"
+                          id="33" />
+                        <externalMetadataColumn
+                          dataType="bool"
+                          name="transfer_out"
+                          id="34" />
+                        <externalMetadataColumn
+                          dataType="dbDate"
+                          name="transfer_out_date"
+                          id="35" />
+                        <externalMetadataColumn
+                          dataType="bool"
+                          name="reactivated"
+                          id="36" />
+                        <externalMetadataColumn
+                          dataType="dbDate"
+                          name="reactivated_date"
+                          id="37" />
+                        <externalMetadataColumn
+                          dataType="bool"
+                          name="made_inactive"
+                          id="38" />
+                        <externalMetadataColumn
+                          dataType="dbDate"
+                          name="made_inactive_date"
+                          id="39" />
+                        <externalMetadataColumn
+                          dataType="bool"
+                          name="died"
+                          id="40" />
+                        <externalMetadataColumn
+                          dataType="dbDate"
+                          name="died_date"
+                          id="41" />
+                        <externalMetadataColumn
+                          dataType="bool"
+                          name="stopped_art"
+                          id="42" />
+                        <externalMetadataColumn
+                          dataType="dbDate"
+                          name="stopped_art_date"
+                          id="43" />
+                        <externalMetadataColumn
+                          dataType="nText"
+                          name="patient_made_inactive_reason"
+                          id="44" />
+                        <externalMetadataColumn
+                          dataType="nText"
+                          name="clinic_referred_to"
+                          id="45" />
+                        <externalMetadataColumn
+                          dataType="nText"
+                          name="cause_of_death"
+                          id="46" />
+                        <externalMetadataColumn
+                          dataType="nText"
+                          name="other_cause_of_death"
+                          id="47" />
+                        <externalMetadataColumn
+                          dataType="nText"
+                          name="patient_reactivated_reason"
+                          id="48" />
+                        <externalMetadataColumn
+                          dataType="nText"
+                          name="other_patient_reactivated_reason"
+                          id="49" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="15"
+                      id="50">
+                      <outputColumns>
+                        <outputColumn
+                          dataType="i4"
+                          lineageId="51"
+                          name="ErrorCode"
+                          specialFlags="1"
+                          id="51" />
+                        <outputColumn
+                          dataType="i4"
+                          lineageId="52"
+                          name="ErrorColumn"
+                          specialFlags="2"
+                          id="52" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7"
+                  id="53">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout"
+                      id="54">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"
+                      id="55"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"
+                      id="56"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"
+                      id="57">SELECT * FROM art.patient_status ORDER BY interaction_id ASC</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"
+                      id="58"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage"
+                      id="59">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage"
+                      id="60">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode"
+                      id="61">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"
+                      id="62"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      connectionManagerID="{B9E4AB14-1FB7-4886-9D4E-BB43D4C1CEDC}"
+                      connectionManagerRefId="Package.ConnectionManagers[source]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection"
+                      id="63" />
+                  </connections>
+                  <outputs>
+                    <output
+                      name="OLE DB Source Output"
+                      id="64">
+                      <outputColumns>
+                        <outputColumn
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="82"
+                          lineageId="65"
+                          name="interaction_id"
+                          truncationRowDisposition="FailComponent"
+                          id="65" />
+                        <outputColumn
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="83"
+                          lineageId="66"
+                          name="transfer_out"
+                          truncationRowDisposition="FailComponent"
+                          id="66" />
+                        <outputColumn
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="84"
+                          lineageId="67"
+                          name="transfer_out_date"
+                          truncationRowDisposition="FailComponent"
+                          id="67" />
+                        <outputColumn
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="85"
+                          lineageId="68"
+                          name="reactivated"
+                          truncationRowDisposition="FailComponent"
+                          id="68" />
+                        <outputColumn
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="86"
+                          lineageId="69"
+                          name="reactivated_date"
+                          truncationRowDisposition="FailComponent"
+                          id="69" />
+                        <outputColumn
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="87"
+                          lineageId="70"
+                          name="made_inactive"
+                          truncationRowDisposition="FailComponent"
+                          id="70" />
+                        <outputColumn
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="88"
+                          lineageId="71"
+                          name="made_inactive_date"
+                          truncationRowDisposition="FailComponent"
+                          id="71" />
+                        <outputColumn
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="89"
+                          lineageId="72"
+                          name="died"
+                          truncationRowDisposition="FailComponent"
+                          id="72" />
+                        <outputColumn
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="90"
+                          lineageId="73"
+                          name="died_date"
+                          truncationRowDisposition="FailComponent"
+                          id="73" />
+                        <outputColumn
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="91"
+                          lineageId="74"
+                          name="stopped_art"
+                          truncationRowDisposition="FailComponent"
+                          id="74" />
+                        <outputColumn
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="92"
+                          lineageId="75"
+                          name="stopped_art_date"
+                          truncationRowDisposition="FailComponent"
+                          id="75" />
+                        <outputColumn
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="93"
+                          lineageId="76"
+                          name="patient_made_inactive_reason"
+                          truncationRowDisposition="FailComponent"
+                          id="76" />
+                        <outputColumn
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="94"
+                          lineageId="77"
+                          name="clinic_referred_to"
+                          truncationRowDisposition="FailComponent"
+                          id="77" />
+                        <outputColumn
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="95"
+                          lineageId="78"
+                          name="cause_of_death"
+                          truncationRowDisposition="FailComponent"
+                          id="78" />
+                        <outputColumn
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="96"
+                          lineageId="79"
+                          name="other_cause_of_death"
+                          truncationRowDisposition="FailComponent"
+                          id="79" />
+                        <outputColumn
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="97"
+                          lineageId="80"
+                          name="patient_reactivated_reason"
+                          truncationRowDisposition="FailComponent"
+                          id="80" />
+                        <outputColumn
+                          dataType="nText"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="98"
+                          lineageId="81"
+                          name="other_patient_reactivated_reason"
+                          truncationRowDisposition="FailComponent"
+                          id="81" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          dataType="i4"
+                          name="interaction_id"
+                          id="82" />
+                        <externalMetadataColumn
+                          dataType="bool"
+                          name="transfer_out"
+                          id="83" />
+                        <externalMetadataColumn
+                          dataType="dbDate"
+                          name="transfer_out_date"
+                          id="84" />
+                        <externalMetadataColumn
+                          dataType="bool"
+                          name="reactivated"
+                          id="85" />
+                        <externalMetadataColumn
+                          dataType="dbDate"
+                          name="reactivated_date"
+                          id="86" />
+                        <externalMetadataColumn
+                          dataType="bool"
+                          name="made_inactive"
+                          id="87" />
+                        <externalMetadataColumn
+                          dataType="dbDate"
+                          name="made_inactive_date"
+                          id="88" />
+                        <externalMetadataColumn
+                          dataType="bool"
+                          name="died"
+                          id="89" />
+                        <externalMetadataColumn
+                          dataType="dbDate"
+                          name="died_date"
+                          id="90" />
+                        <externalMetadataColumn
+                          dataType="bool"
+                          name="stopped_art"
+                          id="91" />
+                        <externalMetadataColumn
+                          dataType="dbDate"
+                          name="stopped_art_date"
+                          id="92" />
+                        <externalMetadataColumn
+                          dataType="nText"
+                          name="patient_made_inactive_reason"
+                          id="93" />
+                        <externalMetadataColumn
+                          dataType="nText"
+                          name="clinic_referred_to"
+                          id="94" />
+                        <externalMetadataColumn
+                          dataType="nText"
+                          name="cause_of_death"
+                          id="95" />
+                        <externalMetadataColumn
+                          dataType="nText"
+                          name="other_cause_of_death"
+                          id="96" />
+                        <externalMetadataColumn
+                          dataType="nText"
+                          name="patient_reactivated_reason"
+                          id="97" />
+                        <externalMetadataColumn
+                          dataType="nText"
+                          name="other_patient_reactivated_reason"
+                          id="98" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output"
+                      id="99">
+                      <outputColumns>
+                        <outputColumn
+                          dataType="i4"
+                          lineageId="100"
+                          name="interaction_id"
+                          id="100" />
+                        <outputColumn
+                          dataType="bool"
+                          lineageId="101"
+                          name="transfer_out"
+                          id="101" />
+                        <outputColumn
+                          dataType="dbDate"
+                          lineageId="102"
+                          name="transfer_out_date"
+                          id="102" />
+                        <outputColumn
+                          dataType="bool"
+                          lineageId="103"
+                          name="reactivated"
+                          id="103" />
+                        <outputColumn
+                          dataType="dbDate"
+                          lineageId="104"
+                          name="reactivated_date"
+                          id="104" />
+                        <outputColumn
+                          dataType="bool"
+                          lineageId="105"
+                          name="made_inactive"
+                          id="105" />
+                        <outputColumn
+                          dataType="dbDate"
+                          lineageId="106"
+                          name="made_inactive_date"
+                          id="106" />
+                        <outputColumn
+                          dataType="bool"
+                          lineageId="107"
+                          name="died"
+                          id="107" />
+                        <outputColumn
+                          dataType="dbDate"
+                          lineageId="108"
+                          name="died_date"
+                          id="108" />
+                        <outputColumn
+                          dataType="bool"
+                          lineageId="109"
+                          name="stopped_art"
+                          id="109" />
+                        <outputColumn
+                          dataType="dbDate"
+                          lineageId="110"
+                          name="stopped_art_date"
+                          id="110" />
+                        <outputColumn
+                          dataType="nText"
+                          lineageId="111"
+                          name="patient_made_inactive_reason"
+                          id="111" />
+                        <outputColumn
+                          dataType="nText"
+                          lineageId="112"
+                          name="clinic_referred_to"
+                          id="112" />
+                        <outputColumn
+                          dataType="nText"
+                          lineageId="113"
+                          name="cause_of_death"
+                          id="113" />
+                        <outputColumn
+                          dataType="nText"
+                          lineageId="114"
+                          name="other_cause_of_death"
+                          id="114" />
+                        <outputColumn
+                          dataType="nText"
+                          lineageId="115"
+                          name="patient_reactivated_reason"
+                          id="115" />
+                        <outputColumn
+                          dataType="nText"
+                          lineageId="116"
+                          name="other_patient_reactivated_reason"
+                          id="116" />
+                        <outputColumn
+                          dataType="i4"
+                          lineageId="117"
+                          name="ErrorCode"
+                          specialFlags="1"
+                          id="117" />
+                        <outputColumn
+                          dataType="i4"
+                          lineageId="118"
+                          name="ErrorColumn"
+                          specialFlags="2"
+                          id="118" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  endId="15"
+                  name="OLE DB Source Output"
+                  startId="64"
+                  id="119" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container 1\Truncate patient_status_staging"
+          DTS:CreationName="SSIS.ReplacementTask"
+          DTS:Description="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:DTSID="{4EA5FACD-C3A5-401E-A5D3-AC0B48A017C5}"
+          DTS:ExecutableType="SSIS.ReplacementTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate patient_status_staging"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9F75FD1C-0C27-4457-A834-1F96FBDEA7B0}"
+              SQLTask:SqlStatementSource="DELETE FROM patient_status_staging;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container 1.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{930F19EB-153B-4CED-ABAF-BA2F184EC307}"
+          DTS:From="Package\Sequence Container 1\Truncate patient_status_staging"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence Container 1\Move records to patient_status_staging" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container 2"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{D780D448-943B-4303-84A3-D9B7ABEA8996}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container 2">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container 2\Data Flow Task"
+          DTS:CreationName="SSIS.ReplacementTask"
+          DTS:Description="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:DTSID="{1897699A-2704-4C8E-B44A-0B5DF8458BEA}"
+          DTS:ExecutableType="SSIS.ReplacementTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4"
+                  id="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout"
+                      id="3">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"
+                      id="4">[dispensation_date_staging]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"
+                      id="5"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"
+                      id="6"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage"
+                      id="7">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage"
+                      id="8">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode"
+                      id="9">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity"
+                      id="10">true</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls"
+                      id="11">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"
+                      id="12">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize"
+                      id="13">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      connectionManagerID="{9F75FD1C-0C27-4457-A834-1F96FBDEA7B0}"
+                      connectionManagerRefId="Package.ConnectionManagers[Destination]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection"
+                      id="14" />
+                  </connections>
+                  <inputs>
+                    <input
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input"
+                      id="15">
+                      <inputColumns>
+                        <inputColumn
+                          cachedDataType="i4"
+                          cachedName="interaction_id"
+                          externalMetadataColumnId="20"
+                          lineageId="39"
+                          id="16" />
+                        <inputColumn
+                          cachedDataType="i4"
+                          cachedName="component_count"
+                          externalMetadataColumnId="21"
+                          lineageId="40"
+                          id="17" />
+                        <inputColumn
+                          cachedDataType="i4"
+                          cachedName="duration"
+                          externalMetadataColumnId="22"
+                          lineageId="41"
+                          id="18" />
+                        <inputColumn
+                          cachedDataType="dbDate"
+                          cachedName="next_visit_date"
+                          externalMetadataColumnId="23"
+                          lineageId="42"
+                          id="19" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          dataType="i4"
+                          name="interaction_id"
+                          id="20" />
+                        <externalMetadataColumn
+                          dataType="i4"
+                          name="component_count"
+                          id="21" />
+                        <externalMetadataColumn
+                          dataType="i4"
+                          name="duration"
+                          id="22" />
+                        <externalMetadataColumn
+                          dataType="dbDate"
+                          name="next_visit_date"
+                          id="23" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="15"
+                      id="24">
+                      <outputColumns>
+                        <outputColumn
+                          dataType="i4"
+                          lineageId="25"
+                          name="ErrorCode"
+                          specialFlags="1"
+                          id="25" />
+                        <outputColumn
+                          dataType="i4"
+                          lineageId="26"
+                          name="ErrorColumn"
+                          specialFlags="2"
+                          id="26" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7"
+                  id="27">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout"
+                      id="28">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"
+                      id="29"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"
+                      id="30"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"
+                      id="31">SELECT * FROM art.dispensation_date ORDER BY interaction_id ASC;</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"
+                      id="32"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage"
+                      id="33">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage"
+                      id="34">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode"
+                      id="35">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"
+                      id="36"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      connectionManagerID="{B9E4AB14-1FB7-4886-9D4E-BB43D4C1CEDC}"
+                      connectionManagerRefId="Package.ConnectionManagers[source]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection"
+                      id="37" />
+                  </connections>
+                  <outputs>
+                    <output
+                      name="OLE DB Source Output"
+                      id="38">
+                      <outputColumns>
+                        <outputColumn
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="43"
+                          lineageId="39"
+                          name="interaction_id"
+                          truncationRowDisposition="FailComponent"
+                          id="39" />
+                        <outputColumn
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="44"
+                          lineageId="40"
+                          name="component_count"
+                          truncationRowDisposition="FailComponent"
+                          id="40" />
+                        <outputColumn
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="45"
+                          lineageId="41"
+                          name="duration"
+                          truncationRowDisposition="FailComponent"
+                          id="41" />
+                        <outputColumn
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="46"
+                          lineageId="42"
+                          name="next_visit_date"
+                          truncationRowDisposition="FailComponent"
+                          id="42" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          dataType="i4"
+                          name="interaction_id"
+                          id="43" />
+                        <externalMetadataColumn
+                          dataType="i4"
+                          name="component_count"
+                          id="44" />
+                        <externalMetadataColumn
+                          dataType="i4"
+                          name="duration"
+                          id="45" />
+                        <externalMetadataColumn
+                          dataType="dbDate"
+                          name="next_visit_date"
+                          id="46" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output"
+                      id="47">
+                      <outputColumns>
+                        <outputColumn
+                          dataType="i4"
+                          lineageId="48"
+                          name="interaction_id"
+                          id="48" />
+                        <outputColumn
+                          dataType="i4"
+                          lineageId="49"
+                          name="component_count"
+                          id="49" />
+                        <outputColumn
+                          dataType="i4"
+                          lineageId="50"
+                          name="duration"
+                          id="50" />
+                        <outputColumn
+                          dataType="dbDate"
+                          lineageId="51"
+                          name="next_visit_date"
+                          id="51" />
+                        <outputColumn
+                          dataType="i4"
+                          lineageId="52"
+                          name="ErrorCode"
+                          specialFlags="1"
+                          id="52" />
+                        <outputColumn
+                          dataType="i4"
+                          lineageId="53"
+                          name="ErrorColumn"
+                          specialFlags="2"
+                          id="53" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  endId="15"
+                  name="OLE DB Source Output"
+                  startId="38"
+                  id="54" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container 2\Execute SQL Task"
+          DTS:CreationName="SSIS.ReplacementTask"
+          DTS:Description="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:DTSID="{1AA799EC-99BD-4662-8DE8-1D788056699B}"
+          DTS:ExecutableType="SSIS.ReplacementTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9F75FD1C-0C27-4457-A834-1F96FBDEA7B0}"
+              SQLTask:SqlStatementSource="DELETE FROM dispensation_date_staging;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container 2.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{229BBB3D-DF1B-4781-B38C-CCB9D111FDF9}"
+          DTS:From="Package\Sequence Container 2\Execute SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence Container 2\Data Flow Task" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{FF1C65EE-974F-476A-936A-7F5C17F86753}"
+      DTS:From="Package\Sequence Container"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Sequence Container 1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{0ED84144-B794-49E9-95D5-C20A924AF00E}"
+      DTS:From="Package\Sequence Container 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Sequence Container 2" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Flow Task"
+          TopLeft="392,286" />
+        <NodeLayout
+          Size="256,42"
+          Id="Package\Sequence Container\Move records to care_dates_staging"
+          TopLeft="14.5,75" />
+        <NodeLayout
+          Size="221,42"
+          Id="Package\Sequence Container\Truncate care_dates_staging"
+          TopLeft="31,6.5" />
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="142,48.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.5"
+              Start="0,0"
+              End="0,19">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="308,175"
+          Size="308,218"
+          Id="Package\Sequence Container"
+          TopLeft="63,57" />
+        <NodeLayout
+          Size="271,42"
+          Id="Package\Sequence Container 1\Move records to patient_status_staging"
+          TopLeft="21,75" />
+        <NodeLayout
+          Size="235,42"
+          Id="Package\Sequence Container 1\Truncate patient_status_staging"
+          TopLeft="41,1.5" />
+        <EdgeLayout
+          Id="Package\Sequence Container 1.PrecedenceConstraints[Constraint]"
+          TopLeft="157.5,43.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.5"
+              Start="0,0"
+              End="0,24">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="336,172"
+          Size="336,215"
+          Id="Package\Sequence Container 1"
+          TopLeft="501,63" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Sequence Container 2\Data Flow Task"
+          TopLeft="41,93" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Sequence Container 2\Execute SQL Task"
+          TopLeft="32,4" />
+        <EdgeLayout
+          Id="Package\Sequence Container 2.PrecedenceConstraints[Constraint]"
+          TopLeft="117.75,46">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="255,190"
+          Size="255,233"
+          Id="Package\Sequence Container 2"
+          TopLeft="984,59" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="371,168.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="130,0"
+              Start="0,0"
+              End="122.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="122.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="837,173">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="147,0"
+              Start="0,0"
+              End="139.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="139.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
